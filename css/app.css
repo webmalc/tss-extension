@@ -1,0 +1,7 @@
+.margin-top-lg {
+  margin-top: 40px;
+}
+.form-group.required .control-label:after {
+  content: " *";
+  color: #e74c3c;
+}

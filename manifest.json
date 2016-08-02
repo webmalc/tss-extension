@@ -15,7 +15,7 @@
     "128": "img/copy_128.png"
   },
   "browser_action": {
-    "default_title": "Open TSS save page"
+    "default_title": "BPEMEHA.ru: добавить закладку"
   },
   "permissions": ["contextMenus"],
   "background": {
