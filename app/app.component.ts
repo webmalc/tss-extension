@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+import  { BookmarkComponent } from './bookmark.component'
+
+
 @Component({
-    selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    selector: 'tss-app',
+    templateUrl: 'templates/app.component.html',
+    directives: [ROUTER_DIRECTIVES],
+    precompile: [BookmarkComponent]
 })
-export class AppComponent { }
+
+export class AppComponent {}

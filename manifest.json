@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "TSS",
+  "short_name": "TSS",
+  "description": "TSS extension.",
+  "version": "0.0.1",
+  "author": "webmalc@gmail.com",
+
+
+  "icons": {
+    "16": "img/copy_16.png",
+    "24": "img/copy_24.png",
+    "32": "img/copy_32.png",
+    "48": "img/copy_48.png",
+    "128": "img/copy_128.png"
+  },
+  "browser_action": {
+    "default_title": "Open TSS save page"
+  },
+  "permissions": ["contextMenus"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

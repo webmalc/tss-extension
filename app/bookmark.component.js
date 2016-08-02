@@ -9,21 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var bookmark_component_1 = require('./bookmark.component');
-var AppComponent = (function () {
-    function AppComponent() {
+var BookmarkComponent = (function () {
+    function BookmarkComponent() {
     }
-    AppComponent = __decorate([
+    BookmarkComponent.prototype.ngOnInit = function () {
+    };
+    BookmarkComponent = __decorate([
         core_1.Component({
-            selector: 'tss-app',
-            templateUrl: 'templates/app.component.html',
-            directives: [router_1.ROUTER_DIRECTIVES],
-            precompile: [bookmark_component_1.BookmarkComponent]
+            templateUrl: 'templates/bookmark.component.html',
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], BookmarkComponent);
+    return BookmarkComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.BookmarkComponent = BookmarkComponent;
+//# sourceMappingURL=bookmark.component.js.map
