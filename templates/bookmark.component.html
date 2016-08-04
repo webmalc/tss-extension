@@ -1,22 +1,28 @@
 <h1><strong>BPEMEHA.ru:</strong> добавить закладку</h1>
 
-<form class="form-horizontal margin-top-lg">
+<form class="form-horizontal margin-top-lg" (ngSubmit)="save()" #bookmarkForm="ngForm">
     <div class="form-group required">
         <label for="title" class="col-sm-2 control-label">Заголовок</label>
         <div class="col-sm-10">
-            <input type="text" required class="form-control" id="title" placeholder="Вторая мировая война">
+            <input [(ngModel)]="bookmark.title" name="title" ngControl="title" type="text" required class="form-control" id="title" placeholder="Вторая мировая война">
+        </div>
+    </div>
+    <div class="form-group required">
+        <label for="title" class="col-sm-2 control-label">URL</label>
+        <div class="col-sm-10">
+            <input [(ngModel)]="bookmark.url" name="url" type="url" ngControl="url" required class="form-control" id="url" placeholder="http://google.com">
         </div>
     </div>
     <div class="form-group required">
         <label for="date" class="col-sm-2 control-label">Дата</label>
         <div class="col-sm-10">
-            <input type="text" required class="form-control" id="date" placeholder="01.09.1939">
+            <input type="text" [(ngModel)]="bookmark.date" name="date" ngControl="date" required class="form-control" id="date" placeholder="01.09.1939">
         </div>
     </div>
     <div class="form-group required">
         <label for="era" class="col-sm-2 control-label">Эра</label>
         <div class="col-sm-10">
-            <select class="form-control" id="era" required>
+            <select class="form-control" id="era" required [(ngModel)]="bookmark.era" name="era" ngControl="era">
                 <option value="1">наша эра</option>
                 <option value="0">до нашей эры</option>
             </select>
@@ -25,21 +31,25 @@
     <div class="form-group required">
         <label for="category" class="col-sm-2 control-label">Категория</label>
         <div class="col-sm-10">
-            <select class="form-control" id="category" required>
+            <select class="form-control" id="category" required [(ngModel)]="bookmark.category" name="category" ngControl="category">
+                <option selected></option>
+                <option *ngFor="let category of categories" [value]="category">{{category}}</option>
             </select>
         </div>
     </div>
     <div class="form-group">
         <label for="tags" class="col-sm-2 control-label">Теги</label>
         <div class="col-sm-10">
-            <select class="form-control" id="tags">
+            <select class="form-control" id="tags" [(ngModel)]="bookmark.tags" name="tags" ngControl="tags">
+                <option selected></option>
+                <option *ngFor="let tag of tags" [value]="tag">{{tag}}</option>
             </select>
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default ">Сохранить</button>
+            <button type="submit" class="btn btn-default" [disabled]="!bookmarkForm.form.valid">Сохранить</button>
         </div>
     </div>
 

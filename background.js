@@ -1,6 +1,7 @@
 /*global chrome */
 chrome.browserAction.onClicked.addListener(function (page) {
     'use strict';
-    console.log(page);
-    chrome.tabs.create({ url: "index.html?page=" + encodeURIComponent(page.url) });
+    chrome.tabs.create({
+        url: "index.html?url=" + encodeURIComponent(page.url) + '&title=' + encodeURIComponent(page.title)
+    });
 });

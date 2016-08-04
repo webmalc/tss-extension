@@ -1,16 +1,29 @@
-export class Bookmark {
-    public title: string;
-    public date: string;
-    public category: Category;
-    public tags: Tag;
+class Base {
+    public id: number
+    public title: string
+
+    public toString()
+    {
+        return this.title
+    }
+
+    public constructor(title) {
+        this.title = title
+    }
 }
 
-export class Category {
-    public title: string;
-    public bookmarks: Bookmark[];
+export class Bookmark extends Base {
+    public url: string
+    public date: string
+    public era: number = 1
+    public category: Category
+    public tags: Tag[]
 }
 
-export class Tag {
-    public title: string;
-    public bookmarks: Bookmark[];
+export class Category extends Base {
+    public bookmarks: Bookmark[]
+}
+
+export class Tag extends  Base{
+    public bookmarks: Bookmark[]
 }
